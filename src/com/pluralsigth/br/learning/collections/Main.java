@@ -1,18 +1,19 @@
 package com.pluralsigth.br.learning.collections;
 
 import com.pluralsigth.br.learning.collections.model.Product;
+import com.pluralsigth.br.learning.collections.model.Shipment;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
 
+    public static Product door = new Product("Wooden Door", 35);
+    public static Product floorPanel = new Product("Glass Window", 10);
+    public static Product desk = new Product("Desk Gamer", 15);
+
     public static void main(String[] args) {
         System.out.printf("Starting learning about Collections: " + System.lineSeparator());
-
-        Product door = new Product("Wooden Door", 35);
-        Product floorPanel = new Product("Glass Window", 10);
-        Product desk = new Product("Desk Gamer", 15);
 
         //TODO MAP: Implementing
         final Map<Integer, Product> idToProduct = new HashMap<>();
@@ -67,8 +68,23 @@ public class Main {
         implementingSteamsProducts(productList);
         implementingSteamsProductsWithCollections(productList);
 
+        Shipment shipment = new Shipment();
+        shipment.add(door);
+        shipment.add(floorPanel);
+        shipment.add(door);
+        shipment.add(floorPanel);
+        shipment.add(desk);
+
+        shipment.prepare();
+
+        List<Product> lightVanProducts = shipment.getLightVanProduts();
+        lightVanProducts.remove(floorPanel);
+        shipment.forEach(product -> System.out.println(product));
+
         //TODO Out results
         System.out.printf("Finishied learning about Collections: " + System.lineSeparator());
+        System.out.printf("ligthVanProducts = " + lightVanProducts);
+        System.out.printf("Shipment = " + shipment.getLightVanProduts());
 //        System.out.printf(String.valueOf(ids) + System.lineSeparator());
 //        System.out.printf(String.valueOf(idToProduct) + System.lineSeparator());
 //        System.out.printf(String.valueOf(productCollection.size()) + System.lineSeparator());
