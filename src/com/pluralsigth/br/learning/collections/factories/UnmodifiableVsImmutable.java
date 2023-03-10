@@ -1,4 +1,4 @@
-package com.pluralsigth.br.learning.collections;
+package com.pluralsigth.br.learning.collections.factories;
 
 import java.util.Collections;
 import java.util.HashMap;

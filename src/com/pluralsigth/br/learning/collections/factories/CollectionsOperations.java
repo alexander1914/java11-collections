@@ -1,4 +1,4 @@
-package com.pluralsigth.br.learning.collections;
+package com.pluralsigth.br.learning.collections.factories;
 
 import com.pluralsigth.br.learning.collections.model.Product;
 
